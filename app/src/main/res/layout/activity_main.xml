@@ -10,20 +10,35 @@
         tools:context=".MainActivity">
 
         <jp.shiita.balloonviewsample.BalloonView
-            android:layout_width="wrap_content"
+            android:id="@+id/balloon1"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|end"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp" />
+
+        <jp.shiita.balloonviewsample.BalloonView
+            android:id="@+id/balloon2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal" />
 
+        <jp.shiita.balloonviewsample.BalloonView
+            android:id="@+id/balloon3"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content" />
+
+        <jp.shiita.balloonviewsample.BalloonView
+            android:id="@+id/balloon4"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end" />
+
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
             android:src="@drawable/ic_droid" />
-
-        <SeekBar
-            android:id="@+id/seekBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp" />
     </LinearLayout>
 </layout>

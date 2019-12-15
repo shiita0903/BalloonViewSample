@@ -1,7 +1,6 @@
 package jp.shiita.balloonviewsample
 
 import android.os.Bundle
-import android.widget.SeekBar
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -17,17 +16,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                binding.imageView.x = progress * 10.toFloat()
-            }
+        binding.balloon1.setTargetView(binding.imageView)
+        binding.balloon2.setTargetView(binding.imageView)
+        binding.balloon3.setTargetView(binding.imageView)
+        binding.balloon4.setTargetView(binding.imageView)
+    }
 
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {
-            }
-
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {
-            }
-        })
+    override fun onDestroy() {
+        binding.balloon1.removeTargetView(binding.imageView)
+        binding.balloon2.removeTargetView(binding.imageView)
+        binding.balloon3.removeTargetView(binding.imageView)
+        binding.balloon4.removeTargetView(binding.imageView)
+        super.onDestroy()
     }
 }
 
